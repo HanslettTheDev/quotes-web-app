@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+/* Imports above */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Default styling for html5 elements */
+
+h1 {
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+
+/* #Navbar */
+
+.navbar-edit {
+    padding: 3% 3%;
+}
+
+
+/* header */
+
+#header {
+    text-align: center;
+    padding: 7% 15%;
+}
+
+.text {
+    font-family: cursive;
+    padding: 2px;
+}
+
+.links {
+    width: 100%;
+    display: inline-block;
+}
+
+.q-link {
+    color: white;
+}
+
+.q-link:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.w-screen0 {
+    display: inline;
+}
+
+.w-screen1 {
+    display: inline;
+}
+
+.w-screen2 {
+    display: inline;
+}
+
+.text-Anim {
+    display: inline;
+}
+
+
+/* QUotes Section */
+
+#Quotes-section {
+    background-color: #ececec;
+    padding: 2% 5%;
+}
+
+.Q1 {
+    padding-bottom: 15px;
+    text-align: center;
+    color: gray;
+}
+
+.xtra {
+    padding-top: 2%;
+    text-align: right;
+    position: relative;
+    padding-right: 5%;
+}
+
+.xtra a {
+    text-decoration: none;
+}
+
+
+/* footer section */
+
+#footer {
+    padding: 1% 1%;
+}
+
+.btn-group {
+    padding-bottom: 15px;
+}
+
+.svg-icons {
+    padding: 3%;
+    font-size: 50px;
+}
+
+.fa-facebook-f {
+    border-radius: 100%;
+    color: #3b5999;
+}
+
+.fa-youtube {
+    border-radius: 100%;
+    color: #cd201f;
+}
+
+.fa-instagram {
+    color: #e4405f;
+}
+
+.fa-twitter {
+    border-radius: 100%;
+    color: #55acee;
+}
+
+.fa-telegram {
+    border-radius: 100%;
+    color: #0088cc;
+}
+
+.box {
+    text-align: center;
+}
+
+.icons {
+    text-align: center;
+    padding: 3% 11%;
+}
+
+@media (max-width: 497px) {
+    .svg-icons {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 334px) {
+    .svg-icons {
+        font-size: 20px;
+    }
+}
+
+/* Register HTML */
+
+.main-container2 {
+    background-color: white;
+    width: 550px;
+    height: 700px;
+    overflow-y: auto;
+    margin: 6em auto;
+    border-radius: 1.5rem;
+    box-shadow: 0px 11px 10px 5px #0000003d;
+}
+
+.log-in-text {
+    text-align: center;
+    padding-top: 40px;
+    color: #1482e9;
+    font-size: 50px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 40px;
+    font-size: 50px;
+    color: rgba(50, 143, 50, 0.842);
+}
+
+small {
+    font-size: 15px;
+}
+
+.mute {
+    color: rgb(128, 128, 128);
+}
+
+form.form-box {
+    padding-top: 20px;
+    padding-left: 25px;
+}
+
+#center {
+    text-align: center;
+}
+
+.input-box2 {
+    width: 90%;
+    color: rgb(38, 50, 56);
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid rgba(128, 128, 128, 0.408);
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+.error {
+    color: crimson;
+    background-color: none;
+}
+
+.alert-warning {
+    width: 90%;
+}
+
+.user-name:focus,
+.users-email:focus,
+.pass-word:focus,
+.re-type:focus {
+    border: 1px solid rgba(50, 143, 50, 0.842);
+}
+
+.mute-child:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 769px) {
+    .main-container {
+        width: 520px;
+        height: 530px;
+        border-radius: none;
+    }
+    form {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .main-container {
+        width: 300px;
+        height: 500px;
+        border-radius: none;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    form.form-box {
+        padding-right: 20%;
+    }
+}
+
+
+/* login HTML */
+
+.main-container {
+    background-color: white;
+    width: 550px;
+    height: 550px;
+    margin: 6em auto;
+    border-radius: 1.5rem;
+    box-shadow: 0px 11px 10px 5px #0000003d;
+}
+
+.log-in-text {
+    text-align: center;
+    padding-top: 40px;
+    color: #1482e9;
+    font-size: 50px;
+}
+
+.mute-child:hover {
+    text-decoration: none;
+    transition: ease 0.2s;
+}
+
+.user-name0:focus,
+.pass-word0:focus {
+    border: 2px solid #0779e4 !important;
+}
+
+small {
+    font-size: 15px;
+}
+
+.mute {
+    color: rgb(128, 128, 128);
+}
+
+form.form-box {
+    padding-top: 20px;
+    padding-left: 25px;
+}
+
+#center {
+    text-align: center;
+}
+
+.input-box {
+    width: 90%;
+    color: rgb(38, 50, 56);
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid rgba(128, 128, 128, 0.408);
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+
+/* Account HTML */
+
+.message {
+    margin-bottom: 30px;
+}
+
+.media {
+    padding: 10%;
+}
+
+.img-account {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.media-body p {
+    margin-left: 20px;
+}
+
+.container {
+    padding: 1%;
+}
+
+.edit-detail-box {
+    width: 500px;
+}
+
+.input-box3 {
+    width: 90%;
+    color: rgb(38, 50, 56);
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid rgba(128, 128, 128, 0.408);
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+#box .col{
+    padding: 2%;
+}

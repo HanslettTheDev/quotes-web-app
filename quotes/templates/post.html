@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+<title>{{ title }}</title>
+
+{% block content %}
+    <form method="POST" action="">
+        <div id="box">
+            <hr>
+    <h3 style="text-align: center;">Quote Post Creator</h3>
+    <hr>
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <div class="col">
+        {{ form.quote.label }}<br>
+        {% if form.quote.errors %}
+            {{ form.quote(class="form-control is-invalid") }}
+                <div class="alert alert-warning">
+                    {% for error in form.quote.errors %}
+                        <span class="error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                        {{ form.quote(class="form-control") }}
+                {% endif %}
+        </div>
+        <div class="col">
+                <label for="formGroupExampleInput">{{ form.category.label }}</label><br>
+                {% if form.category.errors %}
+                    {{ form.category(class="form-control is-invalid") }}
+                        <div class="alert alert-warning">
+                            {% for error in form.category.errors %}
+                                <span class="error">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                {% else %}
+                        {{ form.category(class="form-control") }}
+                {% endif %}
+        </div>
+    </div>
+    <hr>
+        <div class="form-group" id="center">
+                {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </div>
+        </form>
+{% endblock content %}
+

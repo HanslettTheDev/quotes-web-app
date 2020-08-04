@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <!-- Login Form Starts Here -->
+    <div class="main-container">
+        <h2 class="log-in-text">Login</h2>
+        <form class="form-box" method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.email.label }}<br>
+            {% if form.email.errors %}
+                {{ form.email(class="input-box user-name0 is-invalid") }}
+                    <div class="alert alert-warning">
+                        {% for error in form.email.errors %}
+                            <span class="error">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                   {% else %}
+                        {{ form.email(class="input-box user-name0") }}
+                   {% endif %}
+           </div>
+           <div class="form-group">
+           		{{ form.password.label }}<br>
+           		{% if form.password.errors %}
+                        {{ form.password(class="input-box user-name0 is-invalid") }}
+                            <div class="alert alert-warning">
+                                {% for error in form.password.errors %}
+                                    <span class="error">{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                   {% else %}
+                        {{ form.password(class="input-box user-name0") }}
+                   {% endif %}
+           </div>
+           <div class="form-check">
+               {{ form.remember(class="form-check-input") }}
+               {{ form.remember.label(class="form-check-label") }}
+           </div>
+           <div class="form-group" id="center">
+           		{{ form.submit(class="btn btn-primary") }}
+           </div>
+           <small class="mute">
+                <a href="#" class="mute-child">Forgot Password?</a>
+            </small>
+           <div style="margin-bottom: 50px;">
+           		<small class="mute">
+                       Don't Have An Account? <a href="{{ url_for('register') }}" class="mute-child">Register</a>
+                   </small>
+           </div>
+        </form>
+    </div>
+{% endblock content %}
