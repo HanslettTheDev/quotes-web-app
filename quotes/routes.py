@@ -10,7 +10,8 @@ from flask_login import login_user, current_user, logout_user, login_required
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('index.html')
+    posts = Quotes.query.all()
+    return render_template('index.html', posts=posts)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -87,6 +88,17 @@ def account():
 def createpost():
     form = PostForm()
     if form.validate_on_submit():
+        post = Quotes(quote=form.quote.data, category=form.category.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
         flash('Your Quote has been posted', 'success')
         return redirect(url_for("home"))
     return render_template('post.html', title='New Quote Post', form=form)
+
+
+@app.route("/quotes_manager")
+@login_required
+def quotes_manager():
+    posts = Quotes.query.all() 
+    if current_user.is_authenticated:
+        return render_template('manager.html', posts=posts, title='Post Manager')

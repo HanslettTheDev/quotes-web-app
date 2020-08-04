@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <!-- Nav bar section -->
-    <div class="navbar-edit">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand">Toxic Quotes</a>
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<!-- Nav bar section -->
+<div class="navbar-edit">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand">Toxic Quotes</a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
             <ul class="navbar-nav">
@@ -14,335 +15,99 @@
                 </li>
             </ul>
         </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    {% if current_user.is_authenticated %}
-                    <li class="nav-item">
-                        <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url_for('account') }}" class="nav-link">Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url_for('createpost') }}" class="nav-link">Post A Quote</a>
-                    </li>
-                    {% else %}
-                        <a href="{{ url_for('login') }}" class="nav-link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url_for('register') }}" class="nav-link">Sign Up</a>
-                    </li>
-                    {% endif  %}
-                </ul>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('account') }}" class="nav-link">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('quotes_manager') }}" class="nav-link">Post Manager</a>
+                </li>
+                {% else %}
+                <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('register') }}" class="nav-link">Sign Up</a>
+                </li>
+                {% endif  %}
+            </ul>
 
-            </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
+</div>
 
-    <!-- header section -->
+<!-- header section -->
 
-    <section id="header">
-        {% if current_user.is_authenticated %}
-        <div class="container">
-            <h1>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
-            <p class="text">Welcome aboard, Make your first quote post</p>
-            <button type="button" class="btn btn-primary"><a href="{{ url_for('createpost') }}" class="q-link">Post A Quote</a></button>
+<section id="header">
+    {% if current_user.is_authenticated %}
+    <div class="container">
+        <h1>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
+        <p class="text">Welcome aboard, Make your first quote post</p>
+        <button type="button" class="btn btn-primary"><a href="{{ url_for('createpost') }}" class="q-link">Post A
+                Quote</a></button>
         {% else %}
         <div class="container">
             <h1>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
             <p class="text">Create A Free Account To Post Your Own Inspirational Quotes</p>
-            <button type="button" class="btn btn-primary"><a href="{{ url_for('register') }}" class="q-link">Create An Account</a></button> or
-            <button type="button" class="btn btn-success"><a href="{{ url_for('login') }}" class="q-link">Log In</a></button>
+            <button type="button" class="btn btn-primary"><a href="{{ url_for('register') }}" class="q-link">Create An
+                    Account</a></button> or
+            <button type="button" class="btn btn-success"><a href="{{ url_for('login') }}" class="q-link">Log
+                    In</a></button>
         </div>
         {% endif %}
-    </section>
+</section>
 
-    <!-- Who are we section -->
+<!-- Who are we section -->
 
-    <section id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h3>Who Are We?</h3>
-                    <p class="w-screen0"></p>
-                </div>
-                <div class="col-sm-4">
-                    <h3>Our Services?</h3>
-                    <p class="w-screen1"></p>
-                </div>
-                <div class="col-sm-4">
-                    <h3>Why Choose Toxic Quotes?</h3>
-                    <p class="w-screen2"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Body Sections -->
-    <section id="Quotes-section">
-                {% if current_user.is_authenticated %}
-
-                <div class="container">
-                    <h1 class="Q1">Quotes Gallery</h1>
-                <div class="btn-group">
-                    <h4>#Motivational</h4>
-                </div>
-                <div class="row">
-                <div class="col-sm">
-                    <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-                </div>
-                <div class="col-sm">
-                    <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-                </div>
-                <div class="col-sm">
-                    <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-                </div>
-                <div class="col-sm">
-                    <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 xtra">
-                    <a href="{{ url_for('createpost') }}" class="quotetext">Post A Quote!</a>
-            </div>
-        </div>
-
-        <div class="container">
-        <div class="btn-group">
-            <h4>#Inspirational</h4>
-        </div>
+<section id="header">
+    <div class="container">
         <div class="row">
-        <div class="col-sm">
-            <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 xtra">
-                <a href="{{ url_for('createpost') }}" class="quotetext">Post A Quote!</a>
+            <div class="col-sm-4">
+                <h3>Who Are We?</h3>
+                <p class="w-screen0"></p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Our Services?</h3>
+                <p class="w-screen1"></p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Why Choose Toxic Quotes?</h3>
+                <p class="w-screen2"></p>
+            </div>
         </div>
     </div>
+</section>
+
+<!-- Main Body Sections -->
+<section id="Quotes-section">
+    {% if current_user.is_authenticated %}
 
     <div class="container">
-        <div class="btn-group">
-            <h4>#love</h4>
-        </div>
-        <div class="row">
-        <div class="col-sm">
-            <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 xtra">
-                <a href="{{ url_for('createpost') }}" class="quotetext">Post A Quote!</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="btn-group">
-            <h4>#social</h4>
-        </div>
-        <div class="row">
-        <div class="col-sm">
-            <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 xtra">
-                <a href="{{ url_for('createpost') }}" class="quotetext">Post A Quote!</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="btn-group">
-            <h4>#Science</h4>
-        </div>
-        <div class="row">
-        <div class="col-sm">
-            <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 xtra">
-                <a href="{{ url_for('createpost') }}" class="quotetext">Post A Quote!</a>
-        </div>
-    </div>
-        
-        {% else %}
-        <div class="container">
-        <div class="btn-group">
-            <h4>#Motivational</h4>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-            </div>
-            <div class="col-sm">
-                <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-            </div>
-            <div class="col-sm">
-                <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-            </div>
-            <div class="col-sm">
-                <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 xtra">
-                <a href="{{ url_for('register') }}" class="quotetext">Wanna Post Your Own Quote?</a>
-        </div>
-    </div>
-
-    <div class="container">
-    <div class="btn-group">
-        <h4>#Inspirational</h4>
-    </div>
-    <div class="row">
-        <div class="col-sm">
-            <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-        <div class="col-sm">
-            <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 xtra">
-            <a href="{{ url_for('register') }}" class="quotetext">Wanna Post Your Own Quote?</a>
-    </div>
-</div>
-
-<div class="container">
-<div class="btn-group">
-    <h4>#love</h4>
-</div>
-<div class="row">
-    <div class="col-sm">
-        <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12 xtra">
-        <a href="{{ url_for('register') }}" class="quotetext">Wanna Post Your Own Quote?</a>
-</div>
-</div>
-
-<div class="container">
-<div class="btn-group">
-    <h4>#Social</h4>
-</div>
-<div class="row">
-    <div class="col-sm">
-        <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12 xtra">
-        <a href="{{ url_for('register') }}" class="quotetext">Wanna Post Your Own Quote?</a>
-</div>
-</div>
-
-<div class="container">
-<div class="btn-group">
-    <h4>#Science</h4>
-</div>
-<div class="row">
-    <div class="col-sm">
-        <p class="q-animation">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-    <div class="col-sm">
-        <p class="q-animatio">“Those who have courage and faith shall never perish in misery” ― Anne Frank</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12 xtra">
-        <a href="{{ url_for('register') }}" class="quotetext">Wanna Post Your Own Quote?</a>
-</div>
-</div>
+        <h1 class="Q1">Quotes Gallery</h1>
         {% endif %}
-    </section>
+</section>
 
-    <!-- Main Body Section  -->
-    <section id="footer">
-        <div class="container">
-            <div class="icons">
-                <a class="svg-icons" href=""><i class="fab fa-facebook-f "></i></a>
-                <a class="svg-icons" href=""><i class="fab fa-youtube"></i></a>
-                <a class="svg-icons" href=""><i class="fab fa-instagram "></i></a>
-                <a class="svg-icons" href=""><i class="fab fa-twitter"></i></a>
-                <a class="svg-icons" href=""><i class="fab fa-telegram "></i></a>
-            </div>
-            <div class="box">
-                <p>Toxic Quotes Copyright 2020</p>
-                <p>©All Rights Resereved</p>
-            </div>
+<!-- Main Body Section  -->
+<section id="footer">
+    <div class="container">
+        <div class="icons">
+            <a class="svg-icons" href=""><i class="fab fa-facebook-f "></i></a>
+            <a class="svg-icons" href=""><i class="fab fa-youtube"></i></a>
+            <a class="svg-icons" href=""><i class="fab fa-instagram "></i></a>
+            <a class="svg-icons" href=""><i class="fab fa-twitter"></i></a>
+            <a class="svg-icons" href=""><i class="fab fa-telegram "></i></a>
         </div>
-    </section>
+        <div class="box">
+            <p>Toxic Quotes Copyright 2020</p>
+            <p>©All Rights Resereved</p>
+        </div>
+    </div>
+</section>
 
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
-    {% endblock content %}
+{% endblock content %}

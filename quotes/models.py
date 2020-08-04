@@ -20,8 +20,8 @@ class Users(db.Model, UserMixin):
 
 class Quotes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
-    text = db.Column(db.Text, nullable=False)
+    quote = db.Column(db.Text, nullable=False)
+    category = db.Column(db.String(50), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 

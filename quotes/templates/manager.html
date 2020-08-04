@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+<title>{{ title }}</title>
+{% block content %}
+<section>
+    <header>
+        <hr><h4>Manage Your Post</h4>
+            <p>edit and delete your post on the fly</p>
+        <hr>
+    </header>
+    {% for post in posts %}
+    <div class="container">
+        <div class="col-sm-12">
+            <p><b>Quote Message:</b> {{ post.quote }}</p>
+            <p><b>Date Posted:</b> {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-warning">edit</button>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock content %}
+    
