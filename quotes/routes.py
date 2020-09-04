@@ -64,7 +64,7 @@ def save_pic(form_pic):
     return picture_name
 
 
-@app.route("/Account", methods=['GET', 'POST'])
+@app.route("/my_account", methods=['GET', 'POST'])
 @login_required 
 def account():
     form = UpdateAccountForm()
@@ -96,9 +96,19 @@ def createpost():
     return render_template('post.html', title='New Quote Post', form=form)
 
 
-@app.route("/quotes_manager")
+@app.route("/manage_posts")
 @login_required
 def quotes_manager():
     posts = Quotes.query.all() 
     if current_user.is_authenticated:
         return render_template('manager.html', posts=posts, title='Post Manager')
+    
+@app.route("/manage_posts/delete/<int:id>", methods=['GET', 'POST'])
+@login_required
+def delete(id):
+    posts = Quotes.query.get_or_404(id)
+    if current_user.is_authenticated:
+        db.session.delete(posts)
+        db.session.commit()
+        flash("Post deleted successfully", 'info')
+        return redirect(url_for('quotes_manager'))

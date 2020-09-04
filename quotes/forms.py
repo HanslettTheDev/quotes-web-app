@@ -45,5 +45,5 @@ def validate_email(self, email):
 
 class PostForm(FlaskForm):
 	quote = TextAreaField("Your Quote", validators=[DataRequired()], id=['exampleFormControlTextarea1'])
-	category = SelectField(u"Quote Category", validators=[DataRequired()], choices=[('#motivational'), ('#inspirational'), ('#love'), ('#social'), ('#science')])
+	category = SelectField(u"Quote Category", validators=[DataRequired()], choices=[('#motivational'), ('#inspirational'), ('#love'), ('#social'), ('#science'), ('#didyouknow'), ('#fact')])
 	submit = SubmitField('Post')

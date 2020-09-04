@@ -26,4 +26,4 @@ class Quotes(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     def __repr__(self):
-        return f"Quotes('{self.name}', '{self.date_posted}')"
+        return f"Quotes('{self.quote}', '{self.date_posted}', '{self.category}')"

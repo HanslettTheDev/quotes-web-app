@@ -85,20 +85,87 @@
 <!-- Main Body Sections -->
 <section id="Quotes-section">
     {% if current_user.is_authenticated %}
-    <div class="container">
         <div class="btn-group">
-            <h4>#Motivational_quotes</h4>
+            <h4 class="alert alert-info">#Motivational_quotes👇</h4>
         </div>
-        <div></div>
+        <div class="wrapper">
             {% for post in posts %}
+            {% if post.category == '#motivational' %}
+            <div class="flex1">
+                <p>"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            </div>
+            {% endif %}
             {% endfor %}
-            <!-- <li>#Inspirational_quotes</li>
-            <li>#love_quotes</li>
-            <li>#Social_quotes</li>
-            <li>#Science_quotes</li>
-            <li>#Shocking_fact</li> -->
-    <div class="container">
+        </div>
+        <!-- inspirational -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Inspirational_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#inspirational' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!--love-->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#love_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#love' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- Social -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Social_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#social' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- Science -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Science_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#science' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- didyouknow -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#DidYouKnow_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#didyouknow' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- fact -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Fact_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#fact' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
         {% else %}
+
+        <h3 style="text-align: center;">No Quotes Available At the Moment! Create An Account or Login to view quotes on this site </h3>
 
         {% endif %}
 </section>

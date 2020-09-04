@@ -72,7 +72,6 @@ header {
     display: inline;
 }
 
-
 /* QUotes Section */
 
 #Quotes-section {
@@ -97,15 +96,58 @@ header {
     text-decoration: none;
 }
 
-.qts ul {
-    list-style: none;
+.wrapper {
+    margin-bottom: 2%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 
-.qts ul li {
-    padding: 2rem;
-    margin-bottom: 20px;
+.flex1 {
+    align-items: center;
+    font-family: cursive;
+    font-size: 15px;
+    padding: 1%;
+    max-width: 300px;
+    max-height: 200px;
+    overflow-x: hidden;
 }
 
+    /* Removal of scroll bar in the wrapper divs */
+.flex1::-webkit-scrollbar {
+    display: none;
+}
+
+.flex1 {
+    scrollbar-width: none;
+}
+
+    /* responsive design */
+
+@media (max-width: 500px) {
+    .flex1 {
+        font-size: 14px;
+        padding: 7%;
+    }
+}
+
+@media (max-width: 768px) {
+    .flex1 {
+        font-size: 15px;
+        padding: 5%;
+        width: 500px;
+    }
+}
+
+@media (max-width: 889px) {
+    .flex1 {
+        font-size: 20px;
+        width: 500px;
+    }
+    .wrapper {
+        padding: 2%;
+    }
+}
 
 /* footer section */
 
