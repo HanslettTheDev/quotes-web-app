@@ -85,23 +85,18 @@
 <!-- Main Body Sections -->
 <section id="Quotes-section">
     {% if current_user.is_authenticated %}
-    <div class="qts-container">
-        <ul>
-            <li>#Motivational_quotes</li>
+    <div class="container">
+        <div class="btn-group">
+            <h4>#Motivational_quotes</h4>
+        </div>
+        <div></div>
             {% for post in posts %}
-            <div class="qts">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ post.quote }} <br> - <strong>{{ post.author.username }}</strong></li>
-                </ul>
-            </div>
             {% endfor %}
-            <li>#Inspirational_quotes</li>
+            <!-- <li>#Inspirational_quotes</li>
             <li>#love_quotes</li>
             <li>#Social_quotes</li>
             <li>#Science_quotes</li>
-            <li>#Shocking_fact</li>
-        </ul>
-    </div>
+            <li>#Shocking_fact</li> -->
     <div class="container">
         {% else %}
 
