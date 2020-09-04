@@ -25,7 +25,7 @@
                     <a href="{{ url_for('account') }}" class="nav-link">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url_for('quotes_manager') }}" class="nav-link">Post Manager</a>
+                    <a href="{{ url_for('quotes_manager') }}" class="nav-link"><strong>Manage your post</strong></a>
                 </li>
                 {% else %}
                 <a href="{{ url_for('login') }}" class="nav-link">Login</a>
@@ -85,9 +85,26 @@
 <!-- Main Body Sections -->
 <section id="Quotes-section">
     {% if current_user.is_authenticated %}
-
+    <div class="qts-container">
+        <ul>
+            <li>#Motivational_quotes</li>
+            {% for post in posts %}
+            <div class="qts">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ post.quote }} <br> - <strong>{{ post.author.username }}</strong></li>
+                </ul>
+            </div>
+            {% endfor %}
+            <li>#Inspirational_quotes</li>
+            <li>#love_quotes</li>
+            <li>#Social_quotes</li>
+            <li>#Science_quotes</li>
+            <li>#Shocking_fact</li>
+        </ul>
+    </div>
     <div class="container">
-        <h1 class="Q1">Quotes Gallery</h1>
+        {% else %}
+
         {% endif %}
 </section>
 

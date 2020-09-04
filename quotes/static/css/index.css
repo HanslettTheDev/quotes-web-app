@@ -97,6 +97,15 @@ header {
     text-decoration: none;
 }
 
+.qts ul {
+    list-style: none;
+}
+
+.qts ul li {
+    padding: 2rem;
+    margin-bottom: 20px;
+}
+
 
 /* footer section */
 
