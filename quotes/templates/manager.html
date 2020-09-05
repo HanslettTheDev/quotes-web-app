@@ -40,8 +40,27 @@
             <p><b>Quote Message:</b> {{ post.quote }}</p>
             <p><b>Date Posted:</b> {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
             <p><b>Author: {{ post.author.username }}</b></p>
-            <button class="btn btn-danger"><a href="/manage_posts/delete/{{ post.id }}">Delete</a></button>
-            <button class="btn btn-warning">edit</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+            <a class="btn btn-info" role="button" aria-pressed="true" href="{{ url_for('update_quotes', id=post.id) }}">Update</a>
+            <!-- Modal for pop up box delete confirmation -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete This Quote?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close </button>
+                    <form action="{{ url_for('delete', id=post.id) }}" method="POST">
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
     </div>
     {% endif %}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 /* Imports above */
 
 * {
@@ -34,7 +34,7 @@ header {
 
 #header {
     text-align: center;
-    padding: 7% 15%;
+    padding: 2%;
 }
 
 .text {
@@ -56,20 +56,26 @@ header {
     color: white;
 }
 
-.w-screen0 {
-    display: inline;
+/* about us section */
+
+#about-wrapper {
+    text-align: center;
 }
 
-.w-screen1 {
-    display: inline;
+#about-wrapper p {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: gray;
+    padding: 2%;
+    text-align: center;
 }
 
-.w-screen2 {
-    display: inline;
+.aboutus,.aboutus2,.aboutus3 {
+    padding: 5%;
 }
 
-.text-Anim {
-    display: inline;
+.aboutus2 {
+    background-color: #ececec;
 }
 
 /* QUotes Section */
@@ -106,7 +112,7 @@ header {
 .flex1 {
     align-items: center;
     font-family: cursive;
-    font-size: 15px;
+    font-size: 18px;
     padding: 1%;
     max-width: 300px;
     max-height: 200px;

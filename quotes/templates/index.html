@@ -46,128 +46,72 @@
     {% if current_user.is_authenticated %}
     <div class="container">
         <h1>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
-        <p class="text">Welcome aboard, Make your first quote post</p>
+        <p class="text">Welcome aboard, Check out our quotes gallery</p>
         <button type="button" class="btn btn-primary"><a href="{{ url_for('createpost') }}" class="q-link">Post A
                 Quote</a></button>
         {% else %}
         <div class="container">
             <h1>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
             <p class="text">Create A Free Account To Post Your Own Inspirational Quotes</p>
-            <button type="button" class="btn btn-primary"><a href="{{ url_for('register') }}" class="q-link">Create An
-                    Account</a></button> or
-            <button type="button" class="btn btn-success"><a href="{{ url_for('login') }}" class="q-link">Log
-                    In</a></button>
+            <a class="btn btn-success" role="button" href="{{ url_for('register') }}">Create An Account</a> or
+            <a class="btn btn-primary" role="button" href="{{ url_for('login') }}" class="q-link">Log In</a>
         </div>
         {% endif %}
 </section>
 
 <!-- Who are we section -->
-
-<section id="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Who Are We?</h3>
-                <p class="w-screen0"></p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Our Services?</h3>
-                <p class="w-screen1"></p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Why Choose Toxic Quotes?</h3>
-                <p class="w-screen2"></p>
-            </div>
+<div id="about-wrapper">
+    <div class="aboutus">
+        <h1>Who are TQ?</h1>
+        <p>Toxic Quotes Is An Online Quotes Website Designed By Hanslett In 
+            Order To Provide Motivational And Inspirational Quotes For All Its Users. Lorem ipsum, dolor sit amet 
+            consectetur adipisicing elit. Magnam voluptatem esse repellendus est, 
+            sunt deserunt dicta eligendi aperiam soluta eveniet omnis ratione, 
+            at provident a molestias temporibus iste, libero ipsa quod qui animi molestiae. 
+            Quam sunt dignissimos nobis provident, dolorem distinctio et corporis itaque 
+            reprehenderit, nemo eveniet, dolore deleniti possimus.</p>
         </div>
+
+    <div class="aboutus2">
+        <h1>What services do we provide?</h1>
+        <p>Our Services Include Free Quote Notifications To Your Devices For Free! Start Each Day With An Inspiring Quote
+            Lorem ipsum, dolor sit amet 
+            consectetur adipisicing elit. Magnam voluptatem esse repellendus est, 
+            sunt deserunt dicta eligendi aperiam soluta eveniet omnis ratione, 
+            at provident a molestias temporibus iste, libero ipsa quod qui animi molestiae. 
+            Quam sunt dignissimos nobis provident, dolorem distinctio et corporis itaque 
+            reprehenderit, nemo eveniet, dolore deleniti possimus
+        </p>
     </div>
-</section>
+
+    <div class="aboutus3">
+        <h1>What makes TQ different?</h1>
+        <p>We Are Free, No Ads, Just Us To Daily Motivate You With Mind-Blowing Quotes To Share With Your Friends And Kickstart Your Day
+            Lorem ipsum, dolor sit amet 
+            consectetur adipisicing elit. Magnam voluptatem esse repellendus est, 
+            sunt deserunt dicta eligendi aperiam soluta eveniet omnis ratione, 
+            at provident a molestias temporibus iste, libero ipsa quod qui animi molestiae. 
+            Quam sunt dignissimos nobis provident, dolorem distinctio et corporis itaque 
+            reprehenderit, nemo eveniet, dolore deleniti possimus
+        </p>
+    </div>
+</div>
 
 <!-- Main Body Sections -->
 <section id="Quotes-section">
-    {% if current_user.is_authenticated %}
-        <div class="btn-group">
-            <h4 class="alert alert-info">#Motivational_quotes👇</h4>
+    <h1 class="Q1">Quotes Gallery</h1>
+    <div class="btn-group">
+        <h4 class="alert alert-info">#Motivational_quotes👇</h4>
+    </div>
+    <div class="wrapper">
+        {% for post in posts %}
+        {% if post.category == '#motivational' %}
+        <div class="flex1">
+            <p>"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
         </div>
-        <div class="wrapper">
-            {% for post in posts %}
-            {% if post.category == '#motivational' %}
-            <div class="flex1">
-                <p>"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <!-- inspirational -->
-        <div class="btn-group">
-            <h4 class="alert alert-info">#Inspirational_quotes👇</h4>
-        </div>
-        <div class="wrapper">
-            {% for post in posts %}
-            {% if post.category == '#inspirational' %}
-                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <!--love-->
-        <div class="btn-group">
-            <h4 class="alert alert-info">#love_quotes👇</h4>
-        </div>
-        <div class="wrapper">
-            {% for post in posts %}
-            {% if post.category == '#love' %}
-                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <!-- Social -->
-        <div class="btn-group">
-            <h4 class="alert alert-info">#Social_quotes👇</h4>
-        </div>
-        <div class="wrapper">
-            {% for post in posts %}
-            {% if post.category == '#social' %}
-                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <!-- Science -->
-        <div class="btn-group">
-            <h4 class="alert alert-info">#Science_quotes👇</h4>
-        </div>
-        <div class="wrapper">
-            {% for post in posts %}
-            {% if post.category == '#science' %}
-                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <!-- didyouknow -->
-        <div class="btn-group">
-            <h4 class="alert alert-info">#DidYouKnow_quotes👇</h4>
-        </div>
-        <div class="wrapper">
-            {% for post in posts %}
-            {% if post.category == '#didyouknow' %}
-                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <!-- fact -->
-        <div class="btn-group">
-            <h4 class="alert alert-info">#Fact_quotes👇</h4>
-        </div>
-        <div class="wrapper">
-            {% for post in posts %}
-            {% if post.category == '#fact' %}
-                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
-            {% endif %}
-            {% endfor %}
-        </div>
-        {% else %}
-
-        <h3 style="text-align: center;">No Quotes Available At the Moment! Create An Account or Login to view quotes on this site </h3>
-
         {% endif %}
+        {% endfor %}
+    </div>
 </section>
 
 <!-- Main Body Section  -->

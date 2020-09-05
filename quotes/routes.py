@@ -1,7 +1,7 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request, abort
 from quotes import app, db, bcrypt
 from quotes.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from quotes.models import Users, Quotes
@@ -93,22 +93,42 @@ def createpost():
         db.session.commit()
         flash('Your Quote has been posted', 'success')
         return redirect(url_for("home"))
-    return render_template('post.html', title='New Quote Post', form=form)
+    return render_template('post.html', title='New Quote Post', form=form, legend='New Quote Post')
 
 
-@app.route("/manage_posts")
+@app.route("/manage_posts", methods=['GET'])
 @login_required
 def quotes_manager():
-    posts = Quotes.query.all() 
-    if current_user.is_authenticated:
-        return render_template('manager.html', posts=posts, title='Post Manager')
+    posts = Quotes.query.all()
+    # if posts.author != current_user:
+    #     abort(403)
+    return render_template('manager.html', posts=posts, title='Post Manager')
     
-@app.route("/manage_posts/delete/<int:id>", methods=['GET', 'POST'])
+@app.route("/manage_posts/delete/<int:id>", methods=['POST'])
 @login_required
 def delete(id):
     posts = Quotes.query.get_or_404(id)
-    if current_user.is_authenticated:
-        db.session.delete(posts)
+    if posts.author != current_user:
+        abort(403)
+    db.session.delete(posts)
+    db.session.commit()
+    flash("Post deleted successfully", 'success')
+    return redirect(url_for('quotes_manager'))
+    
+@app.route('/manage_posts/update/post_<int:id>', methods=['GET', 'POST'])
+@login_required
+def update_quotes(id):
+    posts = Quotes.query.get_or_404(id)
+    if posts.author != current_user:
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        posts.quote = form.quote.data
+        posts.category = form.category.data
         db.session.commit()
-        flash("Post deleted successfully", 'info')
-        return redirect(url_for('quotes_manager'))
+        flash("Post updated Successfully!", 'success')
+        return redirect(url_for('quotes_manager', id=posts.id))
+    elif request.method == 'GET':
+        form.quote.data = posts.quote
+        form.category.data = posts.category
+    return render_template('post.html', title='Update Quotes', form=form, legend='Update Post')

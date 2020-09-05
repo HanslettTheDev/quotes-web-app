@@ -1,2 +1,88 @@
 reset git proxy settings
 git config --global --unset http.proxy
+## git version 2.25.1
+
+## Deleting local branches
+git branch -d feature/login
+## Deleting remote branches
+git push origin --delete feature/login
+
+## Deleting both a local and a remote branch
+## They are completely separate objects in Git. But
+git branch -d feature/login && git push origin --delete feature/login
+Source:www.git-tower.com
+0
+how to delete a branch gitShell/Bash By Lonely Lizard on Aug 7 2020
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+
+<!-- inspirational -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Inspirational_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#inspirational' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!--love-->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#love_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#love' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- Social -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Social_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#social' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- Science -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Science_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#science' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- didyouknow -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#DidYouKnow_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#didyouknow' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- fact -->
+        <div class="btn-group">
+            <h4 class="alert alert-info">#Fact_quotes👇</h4>
+        </div>
+        <div class="wrapper">
+            {% for post in posts %}
+            {% if post.category == '#fact' %}
+                <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+            {% endif %}
+            {% endfor %}
+        </div>
