@@ -19,4 +19,13 @@ git branch -d localBranchName
 // delete branch remotely
 git push origin --delete remoteBranchName
 
+Setting your Git username for every repository on your computer
+Open Git Bash.
 
+Set a Git username:
+
+$ git config --global user.name "Mona Lisa"
+Confirm that you have set the Git username correctly:
+
+$ git config --global user.name
+> Mona Lisa
