@@ -10,7 +10,7 @@
 
 h1 {
     font-weight: bold;
-    color: black;
+    color: rgb(54, 54, 54);
     font-size: 30px;
 }
 
@@ -58,48 +58,32 @@ header {
 
 /* about us section */
 
-#about-wrapper {
-    text-align: center;
-}
-
 #about-wrapper p {
-    font-size: 20px;
+    font-size: 15px;
+    text-transform: lowercase;
     font-family: 'Montserrat', sans-serif;
     color: gray;
-    padding: 2%;
-    text-align: center;
 }
 
 .aboutus,.aboutus2,.aboutus3 {
     padding: 5%;
 }
 
-.aboutus2 {
-    background-color: #ececec;
-}
 
 /* QUotes Section */
 
 #Quotes-section {
-    background-color: #ececec;
+    margin-top: 5%;
+    background: #ececec;
+    /* background: url('./images/black2.jpg');
+    background-size: cover; */
     padding: 2% 5%;
 }
 
 .Q1 {
     padding-bottom: 15px;
     text-align: center;
-    color: gray;
-}
-
-.xtra {
-    padding-top: 2%;
-    text-align: right;
-    position: relative;
-    padding-right: 5%;
-}
-
-.xtra a {
-    text-decoration: none;
+    color: rgb(82, 78, 78);
 }
 
 .wrapper {
@@ -427,6 +411,13 @@ form.form-box {
     border: 2px solid rgba(128, 128, 128, 0.408);
     text-align: center;
     margin-bottom: 27px;
+}
+
+.form-control-file {
+    width: 90%;
+    border: 1px solid gray;
+    border-radius: 1rem;
+    outline: none;
 }
 
 #box .col{

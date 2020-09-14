@@ -51,8 +51,8 @@
                 Quote</a></button>
         {% else %}
         <div class="container">
-            <h1>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
-            <p class="text">Create A Free Account To Post Your Own Inspirational Quotes</p>
+            <h3>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
+            <p class="text" style="padding: 2%;">Create A Free Account To Post Your Own Inspirational Quotes</p>
             <a class="btn btn-success" role="button" href="{{ url_for('register') }}">Create An Account</a> or
             <a class="btn btn-primary" role="button" href="{{ url_for('login') }}" class="q-link">Log In</a>
         </div>
@@ -62,37 +62,19 @@
 <!-- Who are we section -->
 <div id="about-wrapper">
     <div class="aboutus">
-        <h1>Who are TQ?</h1>
-        <p>Toxic Quotes Is An Online Quotes Website Designed By Hanslett In 
-            Order To Provide Motivational And Inspirational Quotes For All Its Users. Lorem ipsum, dolor sit amet 
-            consectetur adipisicing elit. Magnam voluptatem esse repellendus est, 
-            sunt deserunt dicta eligendi aperiam soluta eveniet omnis ratione, 
-            at provident a molestias temporibus iste, libero ipsa quod qui animi molestiae. 
-            Quam sunt dignissimos nobis provident, dolorem distinctio et corporis itaque 
-            reprehenderit, nemo eveniet, dolore deleniti possimus.</p>
+        <h4>Who is TQ?</h4>
+        <p>Toxic Quotes is website designed in order to provide motivational and inspirational quotes for all its users!</p>
         </div>
 
-    <div class="aboutus2">
-        <h1>What services do we provide?</h1>
-        <p>Our Services Include Free Quote Notifications To Your Devices For Free! Start Each Day With An Inspiring Quote
-            Lorem ipsum, dolor sit amet 
-            consectetur adipisicing elit. Magnam voluptatem esse repellendus est, 
-            sunt deserunt dicta eligendi aperiam soluta eveniet omnis ratione, 
-            at provident a molestias temporibus iste, libero ipsa quod qui animi molestiae. 
-            Quam sunt dignissimos nobis provident, dolorem distinctio et corporis itaque 
-            reprehenderit, nemo eveniet, dolore deleniti possimus
+    <div class="aboutus2 text-center">
+        <h4>What services do we provide?</h4>
+        <p>Our Services Include Free Quote Notifications To Your Devices For Free! Start Each Day With An Inspiring Quote!
         </p>
     </div>
 
-    <div class="aboutus3">
-        <h1>What makes TQ different?</h1>
-        <p>We Are Free, No Ads, Just Us To Daily Motivate You With Mind-Blowing Quotes To Share With Your Friends And Kickstart Your Day
-            Lorem ipsum, dolor sit amet 
-            consectetur adipisicing elit. Magnam voluptatem esse repellendus est, 
-            sunt deserunt dicta eligendi aperiam soluta eveniet omnis ratione, 
-            at provident a molestias temporibus iste, libero ipsa quod qui animi molestiae. 
-            Quam sunt dignissimos nobis provident, dolorem distinctio et corporis itaque 
-            reprehenderit, nemo eveniet, dolore deleniti possimus
+    <div class="aboutus3 text-right">
+        <h4>What makes TQ different?</h4>
+        <p>We Are Free, Just Us To Daily Motivate You With Mind-Blowing Quotes And Kickstart Your Day!
         </p>
     </div>
 </div>
@@ -109,6 +91,17 @@
         <div class="flex1">
             <p>"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
         </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <!-- inspirational -->
+    <div class="btn-group">
+        <h4 class="alert alert-info">#Inspirational_quotes👇</h4>
+    </div>
+    <div class="wrapper">
+        {% for post in posts %}
+        {% if post.category == '#inspirational' %}
+            <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
         {% endif %}
         {% endfor %}
     </div>

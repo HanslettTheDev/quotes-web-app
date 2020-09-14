@@ -20,90 +20,92 @@
                 <li class="nav-item">
                     <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url_for('account') }}" class="nav-link">Account</a>
-                </li>
             </ul>
 
         </div>
     </nav>
 </div>
 
-{# form Section #}
+{# Profile section #}
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            {# Profile section #}
-            <hr>
-            <h3 style="margin-left: 50px;">Manage Your Account</h3>
-            <hr>
-            <small class="mute" style="margin-left: 50px;">Change Your <strong>Username</strong>, Your
-                <strong>Email</strong> On The Fly </small>
-            <div class="media">
-                <img src="{{ image_file }}" class="img-account" alt="Profile Pic for {{ current_user.username }}">
-                <div class="media-body">
-                    <p><strong>Username:</strong> {{ current_user.username }}</p>
-                    <p><strong>Email:</strong> <span class="badge badge-info" role="button"
-                            style="padding: 0.6rem;">{{ current_user.email }}</span></p><br>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            {# form section #}
-            <hr>
-            <h3 style="margin-left: 30px;">Edit Account Below</h1>
-                <hr>
-                <div class="edit-detail-box">
-                    <form class="form-box" method="POST" action="" enctype="multipart/form-data">
-                        {{ form.hidden_tag() }}
-                        <div class="form-group">
-                            {{ form.username.label }}<br>
-                            {% if form.username.errors %}
-                            {{ form.username(class="input-box3 is-invalid") }}
-                            <div class="alert alert-warning">
-                                {% for error in form.username.errors %}
-                                <span class="error">{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                            {% else %}
-                            {{ form.username(class="input-box3") }}
-                            {% endif %}
-                        </div>
-                        <div class="form-group">
-                            {{ form.email.label }}<br>
-                            {% if form.email.errors %}
-                            {{ form.email(class="input-box3 is-invalid") }}
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                {% for error in form.email.errors %}
-                                <span class="error">{{ error }}</span>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                {% endfor %}
-                            </div>
-                            {% else %}
-                            {{ form.email(class="input-box3") }}
-                            {% endif %}
-                        </div>
-                        <div class="form-group">
-                            {{ form.pic.label() }}<br>
-                            {{ form.pic(class='form-control-file') }}
-                            {% if form.pic.errors %}
-                                {% for error in form.pic.errors %}
-                                <hr>
-                                <div class="alert alert-danger message">{{ error }}</div>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                        <div class="form-group" id="center">
-                            {{ form.submit(class="btn btn-warning") }}
-                        </div>
-                </div>
-        </div>
+<div class="card text-center container">
+        <h4>Account Details</h4>
+        <hr>
+    <div class="card-body">
+      <img src="{{ image_file }}" class="img-account" alt="profile picture for {{ current_user.username }}">
+      <div class="media-body">
+          <p><strong>Username:</strong> {{ current_user.username }}</p>
+          <p><strong>Your_Email:</strong> {{ current_user.email }}</p>
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-whatever="edit">Edit Account Details Here</button>
     </div>
 </div>
 
+{# form section #}
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Change username, email and profile picture</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="edit-detail-box">
+    <form class="form-box" method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username.label }}<br>
+            {% if form.username.errors %}
+            {{ form.username(class="input-box3 is-invalid") }}
+            <div class="alert alert-warning">
+                {% for error in form.username.errors %}
+                <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.username(class="input-box3") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.email.label }}<br>
+            {% if form.email.errors %}
+            {{ form.email(class="input-box3 is-invalid") }}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {% for error in form.email.errors %}
+                <span class="error">{{ error }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.email(class="input-box3") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.pic.label() }}<br>
+            {{ form.pic(class='form-control-file') }}
+            {% if form.pic.errors %}
+                {% for error in form.pic.errors %}
+                <hr>
+                <div class="alert alert-danger message">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <div class="form-group" id="center">
+            {{ form.submit(class="btn btn-warning") }}
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 {% endblock content %}
