@@ -60,34 +60,35 @@
 </section>
 
 <!-- Who are we section -->
-<div id="about-wrapper">
+<div id="about-wrapper text-left">
     <div class="aboutus">
-        <h4>Who is TQ?</h4>
-        <p>Toxic Quotes is website designed in order to provide motivational and inspirational quotes for all its users!</p>
+        <h4>Who is Toxic Quote?</h4>
+        <p>A website designed to post free quotes </p>
         </div>
 
-    <div class="aboutus2 text-center">
+    <div class="aboutus2">
         <h4>What services do we provide?</h4>
-        <p>Our Services Include Free Quote Notifications To Your Devices For Free! Start Each Day With An Inspiring Quote!
-        </p>
+        <p>Daily quotes on Mobile, PC, Or Any device of your choice</p>
     </div>
 
-    <div class="aboutus3 text-right">
+    <div class="aboutus3">
         <h4>What makes TQ different?</h4>
-        <p>We Are Free, Just Us To Daily Motivate You With Mind-Blowing Quotes And Kickstart Your Day!
-        </p>
+        <p>We are free! And You can post your own quotes</p>
     </div>
 </div>
 
 <!-- Main Body Sections -->
 <section id="Quotes-section">
     <h1 class="Q1">Quotes Gallery</h1>
+    <p>Choose a category to display quotes</p>
+
+    <!-- Example single danger button -->
     <div class="btn-group">
         <h4 class="alert alert-info">#Motivational_quotes👇</h4>
     </div>
     <div class="wrapper">
         {% for post in posts %}
-        {% if post.category == '#motivational' %}
+        {% if post.category == '#motivational', '#inspirational', '#love', '#social', '#science', '#didyouknow', '#fact'] %}
         <div class="flex1">
             <p>"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
         </div>
@@ -105,7 +106,6 @@
         {% endif %}
         {% endfor %}
     </div>
-</section>
 
 <!-- Main Body Section  -->
 <section id="footer">

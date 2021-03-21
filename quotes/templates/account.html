@@ -34,8 +34,8 @@
     <div class="card-body">
       <img src="{{ image_file }}" class="img-account" alt="profile picture for {{ current_user.username }}">
       <div class="media-body">
-          <p><strong>Username:</strong> {{ current_user.username }}</p>
-          <p><strong>Your_Email:</strong> {{ current_user.email }}</p>
+          <p style="margin-right: 7%;"><strong>Username:</strong> {{ current_user.username }}</p>
+          <p><strong>Email:</strong> {{ current_user.email }}</p>
       </div>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-whatever="edit">Edit Account Details Here</button>
     </div>

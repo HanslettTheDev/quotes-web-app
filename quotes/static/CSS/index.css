@@ -59,14 +59,14 @@ header {
 /* about us section */
 
 #about-wrapper p {
-    font-size: 15px;
+    font-size: 25px;
     text-transform: lowercase;
     font-family: 'Montserrat', sans-serif;
     color: gray;
 }
 
 .aboutus,.aboutus2,.aboutus3 {
-    padding: 5%;
+    padding: 1rem;
 }
 
 

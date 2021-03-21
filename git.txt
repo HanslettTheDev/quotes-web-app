@@ -29,3 +29,28 @@ Confirm that you have set the Git username correctly:
 
 $ git config --global user.name
 > Mona Lisa
+
+
+<div class="btn-group">
+        <h4 class="alert alert-info">#Motivational_quotes👇</h4>
+    </div>
+    <div class="wrapper">
+        {% for post in posts %}
+        {% if post.category == '#motivational' %}
+        <div class="flex1">
+            <p>"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <!-- inspirational -->
+    <div class="btn-group">
+        <h4 class="alert alert-info">#Inspirational_quotes👇</h4>
+    </div>
+    <div class="wrapper">
+        {% for post in posts %}
+        {% if post.category == '#inspirational' %}
+            <p class="flex1">"{{ post.quote }}" <br> - <strong>{{ post.author.username }}</strong></p>
+        {% endif %}
+        {% endfor %}
+    </div>
