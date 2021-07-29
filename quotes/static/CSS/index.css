@@ -26,7 +26,7 @@ header {
 /* #Navbar */
 
 .navbar-edit {
-    padding: 3% 3%;
+    padding: 1% 2%;
 }
 
 
@@ -56,20 +56,6 @@ header {
     color: white;
 }
 
-/* about us section */
-
-#about-wrapper p {
-    font-size: 25px;
-    text-transform: lowercase;
-    font-family: 'Montserrat', sans-serif;
-    color: gray;
-}
-
-.aboutus,.aboutus2,.aboutus3 {
-    padding: 1rem;
-}
-
-
 /* QUotes Section */
 
 #Quotes-section {
@@ -78,6 +64,8 @@ header {
     /* background: url('./images/black2.jpg');
     background-size: cover; */
     padding: 2% 5%;
+    border: 1px solid white;
+    border-radius: 1rem;
 }
 
 .Q1 {
@@ -93,24 +81,12 @@ header {
     justify-content: space-evenly;
 }
 
-.flex1 {
-    align-items: center;
-    font-family: cursive;
-    font-size: 18px;
-    padding: 1%;
-    max-width: 300px;
-    max-height: 200px;
-    overflow-x: hidden;
+.wrap2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:flex-end;
 }
 
-    /* Removal of scroll bar in the wrapper divs */
-.flex1::-webkit-scrollbar {
-    display: none;
-}
-
-.flex1 {
-    scrollbar-width: none;
-}
 
     /* responsive design */
 

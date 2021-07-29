@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <!-- Login Form Starts Here -->
+    <div class="main-container">
+        <h2 class="log-in-text">Reset Password</h2>
+        <form class="form-box" method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.email.label }}<br>
+            {% if form.email.errors %}
+                {{ form.email(class="input-box user-name0 is-invalid") }}
+                    <div class="alert alert-warning">
+                        {% for error in form.email.errors %}
+                            <span class="error">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                   {% else %}
+                        {{ form.email(class="input-box user-name0") }}
+                   {% endif %}
+           </div> 
+           <div class="form-group" id="center">
+           		{{ form.submit(class="btn btn-primary") }}
+           </div>
+        </form>
+    </div>
+{% endblock content %}

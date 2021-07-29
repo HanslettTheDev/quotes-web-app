@@ -39,11 +39,11 @@
            		{{ form.submit(class="btn btn-primary") }}
            </div>
            <small class="mute">
-                <a href="#" class="mute-child">Forgot Password?</a>
+                <a href="{{ url_for('users.reset_request') }}" class="mute-child">Forgot Password?</a>
             </small>
            <div style="margin-bottom: 50px;">
            		<small class="mute">
-                       Don't Have An Account? <a href="{{ url_for('register') }}" class="mute-child">Register</a>
+                       Don't Have An Account? <a href="{{ url_for('users.register') }}" class="mute-child">Register</a>
                    </small>
            </div>
         </form>

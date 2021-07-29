@@ -1,0 +1,4 @@
+#virtual env files
+venv/
+#useless files
+.git
