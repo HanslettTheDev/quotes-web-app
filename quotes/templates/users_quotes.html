@@ -41,6 +41,8 @@
     {% endfor %}
 </div>
 <div class="wrap2">
+    <a class="btn btn-outline-info mb-4 {% if posts.page == 1 %}disabled{% endif %}" href="{{ url_for('users.users_quotes', page=posts.prev_num, username=user.username) }}">&laquo;</a>
+
 {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
 {% if page_num %}
     {% if posts.page == page_num %}
@@ -52,6 +54,8 @@
 ....
 {% endif %}
 {% endfor %}
+<a class="btn btn-outline-info mb-4 {% if posts.page == posts.pages  %}disabled{% endif %}" href="{{ url_for('users.users_quotes', page=posts.next_num, username=user.username) }}">&raquo;</a>
 </div>
+<p class="text-right mt-3">Showing page {{ posts.page }} of {{ posts.pages }}</p>
 </section>
 {% endblock content %}

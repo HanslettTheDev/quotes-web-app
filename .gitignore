@@ -1,4 +1,5 @@
 #virtual env files
 venv/
+quotes/__pycache__/
 #useless files
 .git

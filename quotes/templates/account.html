@@ -87,7 +87,7 @@
         </div>
         <div class="form-group">
             {{ form.pic.label() }}<br>
-            {{ form.pic(class='form-control-file') }}
+            {{ form.pic(class='upload-file') }}
             {% if form.pic.errors %}
                 {% for error in form.pic.errors %}
                 <hr>

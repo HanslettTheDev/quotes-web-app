@@ -44,8 +44,8 @@
     <div class="container">
         <h1>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
         <p class="text">Welcome aboard, Check out our quotes gallery</p>
-        <button type="button" class="btn btn-primary"><a href="{{ url_for('quotes_post.createpost') }}" class="q-link">Post A
-                Quote</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{ url_for('quotes_post.createpost') }}" class="q-link">Write a
+                quote</a></button>
         {% else %}
         <div class="container">
             <h3>Toxic Quotes<br>Home Of Mind-Blowing Inspirational Quotes </h1>
@@ -68,11 +68,15 @@
         </div>
         {% endfor %}
     </div>
+
     <div class="wrap2">
+
+    <!-- link left pagination -->
+    <a class="btn btn-outline-info mb-4 {% if posts.page == 1 %}disabled{% endif %}" href="{{ url_for('main.home', page=posts.prev_num) }}">&laquo;</a>
     {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
         {% if page_num %}
             {% if posts.page == page_num %}
-                <a class="btn btn-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+                <a class="btn btn-info mb-4 " href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
             {% else %}
                 <a class="btn btn-outline-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
             {% endif %}        
@@ -80,7 +84,9 @@
         ....
         {% endif %}
     {% endfor %}
-</div>
+    <!-- link right pagination -->
+    <a class="btn btn-outline-info mb-4 {% if posts.page == posts.pages  %}disabled{% endif %}" href="{{ url_for('main.home', page=posts.next_num) }}">&raquo;</a>
+    </div> 
 </section>
 
 <!-- Main Body Section  -->
