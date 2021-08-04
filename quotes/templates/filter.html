@@ -84,7 +84,6 @@
 <!-- Main Body Sections -->
 <section id="Quotes-section">
     <h1 class="Q1">Quotes Gallery</h1>
-    <!-- <form method="POST" action="">
     {{ form.hidden_tag() }}
         <div class="form-group">
             <label for="formGroupExampleInput">{{ form.category.label }}</label>
@@ -98,15 +97,16 @@
                         {{ form.category }}
             {% endif %}
             {{ form.filter_button(class="btn btn-outline-info") }}
-            </div>
-        </form> -->
+       </div>
 
     <!-- Example single danger button -->
     <div class="wrapper">
-        {% for post in posts.items %}
-        <div class="flex1">
-            <p>"{{ post.quote }}" <br> - <a class="link-info" href="{{ url_for('users.users_quotes', username=post.author.username) }}">{{ post.author.username }}</a></p>
-        </div>
+        {% for post.category in posts.items %}
+            {% if post.category == all_cats %}
+            <div class="flex1">
+                <p>"{{ post.quote }}" <br> - <a class="link-info" href="{{ url_for('users.users_quotes', username=post.author.username) }}">{{ post.author.username }}</a></p>
+            </div>
+            {% endif %}
         {% endfor %}
     </div>
 

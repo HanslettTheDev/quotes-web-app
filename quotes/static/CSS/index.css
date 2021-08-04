@@ -29,6 +29,10 @@ header {
     padding: 1% 2%;
 }
 
+.nav-link {
+    cursor: pointer;
+}
+
 
 /* header */
 
@@ -49,6 +53,46 @@ header {
 .q-link:hover {
     text-decoration: none;
     color: white;
+}
+
+.mymodal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0,0.5);
+    border: none;
+}
+
+.modalcontent {
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 6em auto;
+    padding: 2rem;
+    max-width: 70%;
+    height: auto;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.5), 0 7px 20px 0 rgba(0,0,0,0.17);
+    animation-name: modalopen;
+    animation-duration: 2s;
+}
+
+.modalbody li {
+    list-style: none;
+}
+
+@media (max-width: 500px) {
+    .modalhead h3 {
+        font-size: 20px;
+    }
+}
+
+@keyframes modalopen {
+    from{ opacity: 0 }
+    to{ opacity: 1 }
 }
 
 /* QUotes Section */
@@ -88,7 +132,7 @@ header {
     /* responsive design */
 
 @media (max-width: 900px) {
-    #header h1, .navbar-brand, .nav-link, .Q1 {
+    .navbar-brand, .nav-link, .Q1 {
         font-size: 15px;
     }
 
@@ -122,6 +166,9 @@ header {
     }
     .wrap2 {
         width: 70%;
+    }
+    #header .container > h3 {
+        font-size: smaller;
     }
 }
 

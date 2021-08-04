@@ -69,7 +69,7 @@ def users_quotes(username):
     user = Users.query.filter_by(username=username).first_or_404()
     posts = Quotes.query.filter_by(author=user)\
         .order_by(Quotes.date_posted.desc())\
-        .paginate(page=page, per_page=20)
+        .paginate(page=page, per_page=15)
     return render_template('users_quotes.html', posts=posts, user=user)
 
 @users.route("/reset_password", methods=['GET', 'POST'])

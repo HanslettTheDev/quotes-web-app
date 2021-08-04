@@ -1,5 +1,6 @@
-#virtual env files
+#virtual env files and py cache files
 venv/
 quotes/__pycache__/
-#useless files
-.git
+quotes/main/__pycache__/
+quotes/quotes_posts/__pycache__/
+quotes/users/__pycache__/
