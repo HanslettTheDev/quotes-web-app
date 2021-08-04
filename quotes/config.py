@@ -1,8 +1,10 @@
+from boto.s3.connection import S3Connection
 import os
 
+s3 = S3Connection(os.environ['SECRET_KEY'], os.environ['DATABASE_URI'], os.environ['mail_username'], os.environ['mail_password'])
 class Config():
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = "postgres://jyvgdxszsixpex:32df55c7784f8b768ab7ef830111f3a0d67b7a016a88c66954b442bf71eff418@ec2-52-2-118-38.compute-1.amazonaws.com:5432/d5nb51q2j1jp7b"
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
