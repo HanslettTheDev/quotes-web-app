@@ -4,3 +4,10 @@ quotes/__pycache__/
 quotes/main/__pycache__/
 quotes/quotes_posts/__pycache__/
 quotes/users/__pycache__/
+
+# some files
+*.Procfile
+*.requirements
+*.runtime
+
+
