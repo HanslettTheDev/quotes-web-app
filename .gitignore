@@ -6,8 +6,8 @@ quotes/quotes_posts/__pycache__/
 quotes/users/__pycache__/
 
 # some files
-*.Procfile
-*.requirements
-*.runtime
+Procfile
+requirements.txt
+runtime.txt
 
 
