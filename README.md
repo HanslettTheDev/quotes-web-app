@@ -1,12 +1,13 @@
-<b>Quote Website Introduction</b>
+<h1>Quote Website Introduction</h1>
+<hr>
 
 This is a project built using python flask framework
 
-<b>FEATURES</b>
-1. User Authentication
-2. Reset Password
-3. Account Management
-4. Part-Blogging system
-5. Login system
+<h2>FEATURES</h2><hr>
+User Authentication<br>
+Reset Password<br>
+Account Management<br>
+Part-Blogging system<br>
+Login system<br>
 
-BUILT WITH FLASK
+<em>BUILT WITH FLASK, HTML, CSS, JS, PostgresSQL<em>
