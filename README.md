@@ -1,13 +1,21 @@
-<h1>Quote Website Introduction</h1>
+<h1>Quote Web App</h1>
 <hr>
 
-This is a project built using python flask framework
+<h4>Features >>>>></h4>
+<ul type="circle">
+  <li>User Authentication</li>
+  <li>Reset Password</li>
+  <li>Account Management</li>
+  <li>Part-Blogging system</li>
+  <li>Login system</li>
+</ul>
 
-<h2>FEATURES</h2><hr>
-User Authentication<br>
-Reset Password<br>
-Account Management<br>
-Part-Blogging system<br>
-Login system<br>
-
-<em>BUILT WITH FLASK, HTML, CSS, JS, PostgresSQL<em>
+<h4>Technologies Used >>>>>></h4>
+<ul type="circle">
+  <li>FLASK</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JS</li>
+  <li>PostgresSQL</li>
+  <li>Bootstrap</li>
+</ul>
