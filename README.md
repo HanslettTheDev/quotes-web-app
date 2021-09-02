@@ -1,8 +1,16 @@
-<h1>Quote Website Introduction</h1>
+<h1>Quote Web App</h1>
 <hr>
 
-This is a project built using python flask framework
+<h4>Features >>>>></h4>
+<ul type="circle">
+  <li>User Authentication</li>
+  <li>Reset Password</li>
+  <li>Account Management</li>
+  <li>Part-Blogging system</li>
+  <li>Login system</li>
+</ul>
 
+<<<<<<< HEAD
 # FEATURES
 > User Authentication
 > Reset Password
@@ -49,3 +57,14 @@ You need to have python 3 installed to run the web application from the local we
     ```command prompt
     python3 run.py
     ```
+=======
+<h4>Technologies Used >>>>>></h4>
+<ul type="circle">
+  <li>FLASK</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JS</li>
+  <li>PostgresSQL</li>
+  <li>Bootstrap</li>
+</ul>
+>>>>>>> cbd798134e45c467118072b21dd41b55c9686e02
