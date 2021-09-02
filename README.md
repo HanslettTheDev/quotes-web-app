@@ -28,7 +28,7 @@ You need to have python 3 installed to run the web application from the local we
     ```
 
 - ### Linux and Mac
-  - Create a virtual environoment 
+  - Create a virtual environment 
     ```command prompt
     python3 -m venv (name of your environment)
     ```
@@ -36,7 +36,7 @@ You need to have python 3 installed to run the web application from the local we
     ```command prompt
     pip3 install -r requirements.txt
     ```
-  - Activate virtual enviroment
+  - Activate virtual environment
     ```command prompt
     source (name of your environment)\Scripts\activate
     ```
