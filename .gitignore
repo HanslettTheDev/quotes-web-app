@@ -7,7 +7,6 @@ quotes/users/__pycache__/
 
 # some files
 Procfile
-requirements.txt
 runtime.txt
 
 
