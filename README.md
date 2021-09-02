@@ -10,9 +10,9 @@
 # Installation
 You need to have python 3 installed to run the web application from the local web server.
 - ### Windows using command prompt
-  - Create a virtual envitoment 
+  - Create a virtual environment 
     ```command prompt
-    python -m virtualenv (name of your enviroment)
+    python -m virtualenv (name of your environment)
     ```
   - Install required files using the requirements.txt
     ```command prompt
@@ -28,9 +28,9 @@ You need to have python 3 installed to run the web application from the local we
     ```
 
 - ### Linux and Mac
-  - Create a virtual envitoment 
+  - Create a virtual environoment 
     ```command prompt
-    python3 -m venv (name of your enviroment)
+    python3 -m venv (name of your environment)
     ```
   - Install required files using the requirements.txt
     ```command prompt
@@ -38,7 +38,7 @@ You need to have python 3 installed to run the web application from the local we
     ```
   - Activate virtual enviroment
     ```command prompt
-    source (name of your enviroment)\Scripts\activate
+    source (name of your environment)\Scripts\activate
     ```
   - Run it
     ```command prompt
