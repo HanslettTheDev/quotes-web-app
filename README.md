@@ -57,14 +57,3 @@ You need to have python 3 installed to run the web application from the local we
     ```command prompt
     python3 run.py
     ```
-=======
-<h4>Technologies Used >>>>>></h4>
-<ul type="circle">
-  <li>FLASK</li>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JS</li>
-  <li>PostgresSQL</li>
-  <li>Bootstrap</li>
-</ul>
->>>>>>> cbd798134e45c467118072b21dd41b55c9686e02
