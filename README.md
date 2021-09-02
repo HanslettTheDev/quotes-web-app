@@ -9,7 +9,7 @@
 
 # Installation
 You need to have python 3 installed to run the web application from the local web server.
-- ### Windows using Command Prompt
+- ### Windows using command prompt
   - Create a virtual envitoment 
     ```command prompt
     python -m virtualenv (name of your enviroment)
