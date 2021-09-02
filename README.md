@@ -1,24 +1,11 @@
-<h1>Quote Web App</h1>
-<hr>
-
-<h4>Features >>>>></h4>
-<ul type="circle">
-  <li>User Authentication</li>
-  <li>Reset Password</li>
-  <li>Account Management</li>
-  <li>Part-Blogging system</li>
-  <li>Login system</li>
-</ul>
-
-<<<<<<< HEAD
 # FEATURES
-> User Authentication
-> Reset Password
-> Account Management
-> Part-Blogging system
-> Login system
+- User Authentication
+- Reset Password
+- Account Management
+- Part-Blogging system
+- Login system
 
->BUILT WITH FLASK, HTML, CSS, JS, PostgresSQL
+### BUILT WITH FLASK, HTML, CSS, JS, PostgresSQL
 
 # Installation
 You need to have python 3 installed to run the web application from the local web server.
