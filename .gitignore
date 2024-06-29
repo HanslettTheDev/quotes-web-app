@@ -5,8 +5,11 @@ quotes/main/__pycache__/
 quotes/quotes_posts/__pycache__/
 quotes/users/__pycache__/
 
+quotes/errors/__pycache__/
 # some files
 Procfile
 runtime.txt
+
+/*.db
 
 
