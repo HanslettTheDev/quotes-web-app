@@ -71,7 +71,7 @@ Tree==0.2.4
 typing-extensions==3.7.4.3
 tzlocal==2.1
 uritemplate==3.0.1
-urllib3==1.26.2
+urllib3==1.26.19
 virtualenv==20.0.31
 Werkzeug==3.0.3
 wrapt==1.12.1
