@@ -1,7 +1,7 @@
 import os
 import secrets
 from flask import url_for, current_app
-from PIL import Image
+# from PIL import Image
 from quotes import mail
 from flask_mail import Message
 
@@ -12,10 +12,10 @@ def save_pic(form_pic):
     picture_path = os.path.join(current_app.root_path, 'static/profile_images', picture_name) #using the os module join the path of the directory of the saved file with the new concactinated variable
     # resize picture 
     final_size = (125, 125)
-    i = Image.open(form_pic)
-    i.thumbnail(final_size)
+    # # i = Image.open(form_pic)
+    # i.thumbnail(final_size)
     
-    i.save(picture_path) #use the save function to store the picture name finally
+    # i.save(picture_path) #use the save function to store the picture name finally
     
     return picture_name
 

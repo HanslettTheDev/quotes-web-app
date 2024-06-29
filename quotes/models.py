@@ -1,13 +1,13 @@
 from datetime import datetime
-from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from itsdangerous.url_safe import URLSafeTimedSerializer as Serializer
 from quotes import db, login_manager
 from flask import current_app
 from flask_login import UserMixin
 
 @login_manager.user_loader
-
 def load_user(user_id):
     return Users.query.get(int(user_id))
+
 class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
