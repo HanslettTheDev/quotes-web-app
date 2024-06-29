@@ -7,7 +7,6 @@ quotes/users/__pycache__/
 
 quotes/errors/__pycache__/
 # some files
-Procfile
 runtime.txt
 
 /*.db
