@@ -5,8 +5,8 @@ import os
 # load_dotenv()
 # s3 = S3Connection(os.environ['SECRET_KEY'], os.environ['DATABASE_URI'], os.environ['mail_username'], os.environ['mail_password'])
 class Config():
-    SECRET_KEY = os.getenv("SECRET_KEY") 
-    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL") 
+    SECRET_KEY = os.environ.get("SECRET_KEY") 
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL") 
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     SQLALCHEMY_TRACK_MODIFICATIONS = False 
