@@ -12,6 +12,6 @@ class Config():
     SQLALCHEMY_TRACK_MODIFICATIONS = False 
     MAIL_USE_TLS = True
     MAIL_USE_TLS = True
-    DEBUG = False
+    DEBUG = True
     MAIL_USERNAME = "akwatambe3@gmail.com"
     MAIL_PASSWORD = "password"
